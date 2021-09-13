@@ -1,0 +1,55 @@
+﻿@model MVC_NorthWind.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Categories.CategoryName): </b>@Html.DisplayFor(model => model.Categories.CategoryName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Suppliers.CompanyName): </b>@Html.DisplayFor(model => model.Suppliers.CompanyName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ProductName): </b>@Html.DisplayFor(model => model.ProductName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.QuantityPerUnit): </b>@Html.DisplayFor(model => model.QuantityPerUnit)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.UnitPrice): </b>@Html.DisplayFor(model => model.UnitPrice)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.UnitsInStock): </b>@Html.DisplayFor(model => model.UnitsInStock)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.UnitsOnOrder): </b>@Html.DisplayFor(model => model.UnitsOnOrder)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ReorderLevel): </b>@Html.DisplayFor(model => model.ReorderLevel)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Discontinued): </b>@Html.DisplayFor(model => model.Discontinued)</p>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Atras", "TodosProductos")</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Editar Producto", "Edit", new { id = Model.ProductID })</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Eliminar Producto", "Delete", new { id = Model.ProductID })</button>
+            </p>
+        </div>
+    </div>
+</body>

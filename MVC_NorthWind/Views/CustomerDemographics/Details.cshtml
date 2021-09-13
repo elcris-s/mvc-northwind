@@ -1,0 +1,43 @@
+﻿@model MVC_NorthWind.Models.CustomerDemographics
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CustomerTypeID): </b>@Html.DisplayFor(model => model.CustomerTypeID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CustomerDesc): </b>@Html.DisplayFor(model => model.CustomerDesc)</p>
+                </div>
+            </div>
+            <p>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Atras", "TodosDemographics")
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Editar CustomerDemographic", "Edit", new { id = Model.CustomerTypeID.Trim() })
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Eliminar CustomerDemographic", "Delete", new { id = Model.CustomerTypeID.Trim() })
+                </button>
+            </p>
+        </div>
+    </div>
+</body>
+
+
+

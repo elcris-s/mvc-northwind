@@ -1,0 +1,70 @@
+﻿@model MVC_NorthWind.Models.Employees
+
+@{
+    ViewBag.Title = "Empleado";
+    
+    var fechana = Convert.ToDateTime(Model.BirthDate).ToString("d");
+    var fechahi = Convert.ToDateTime(Model.HireDate).ToString("d");
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <img class="rounded mx-auto d-block w-50" src="data:image;base64,@System.Convert.ToBase64String(Model.Photo)" />
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.FirstName): </b>@Html.DisplayFor(model => model.FirstName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.LastName): </b>@Html.DisplayFor(model => model.LastName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Title): </b>@Html.DisplayFor(model => model.Title)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.TitleOfCourtesy): </b>@Html.DisplayFor(model => model.TitleOfCourtesy)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ReportsTo): </b>@Html.DisplayFor(model => model.Employees2.FirstName) @Html.DisplayFor(model => model.Employees2.LastName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.BirthDate): </b>@fechana</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.HireDate): </b>@fechahi</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.HomePhone): </b>@Html.DisplayFor(model => model.HomePhone)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Extension): </b>@Html.DisplayFor(model => model.Extension)</p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <button class="btn btn-light">@Html.ActionLink("Atras", "TodosEmpleados")</button>
+                    <input type="submit" value="Eliminar" class="btn btn-light" />
+                </p>
+            }
+
+            <p class="error">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+</body>
+

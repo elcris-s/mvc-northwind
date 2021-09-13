@@ -1,0 +1,40 @@
+﻿@model MVC_NorthWind.Models.Order_Details
+
+@{
+    ViewBag.Title = "Detalles de Ordenes";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.OrderID): </b>@Html.DisplayFor(model => model.OrderID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ProductID): </b>@Html.DisplayFor(model => model.ProductID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.UnitPrice): </b>@Html.DisplayFor(model => model.UnitPrice)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Quantity): </b>@Html.DisplayFor(model => model.Quantity)</p>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Atras", "TodosDetalles")</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Editar Detalle de Orden", "Edit", new { id = $"{Model.OrderID} {Model.ProductID}" })</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Eliminar Detalle de Orden", "Delete", new { id = $"{Model.OrderID} {Model.ProductID}" })</button>
+            </p>
+        </div>
+    </div>
+</body>

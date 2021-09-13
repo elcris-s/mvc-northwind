@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVC_NorthWind.Models.Shippers>
+
+@{
+    ViewBag.Title = "Compañias Distribuidoras";
+}
+
+<head>
+    <style>
+        .card {
+            margin-top: 2em;
+            margin-left: 15em;
+        }
+        
+    </style>
+</head>
+
+<div class="card shadow p-3 mb-5" style="width: 50rem;">
+    <div class="card-body" align="center">
+        <img class="rounded mx-auto d-block w-50" src="~/images/gif/shippers.gif" />
+        <h3 class="card-title">Seccion de Compañias Distribuidoras</h3>
+        <h4 class="card-text">Elija la opcion que desea realizar</h4>
+        <a style="margin: 2.5px;" href="/Shippers/Create" class="btn btn-primary">Añadir Compañia Distribuidora</a>
+        <a style="margin: 2.5px; " href="/Shippers/TodosShippers" class="btn btn-primary">Mostrar Todos Las Compañias Distribuidoras</a>
+    </div>
+</div>

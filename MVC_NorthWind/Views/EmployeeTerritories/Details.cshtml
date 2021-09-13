@@ -1,0 +1,42 @@
+﻿@model MVC_NorthWind.Models.Model2.EmployeeTerritories
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.EmployeeID): </b>@Html.DisplayFor(model => model.EmployeeID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.TerritoryID): </b>@Html.DisplayFor(model => model.TerritoryID)</p>
+                </div>
+            </div>
+            <p>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Atras", "TodosEmpTer")
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Editar EmployeeTerritories", "Edit", new { id = $"{Model.EmployeeID} {Model.TerritoryID}" })
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Eliminar EmployeeTerritories", "Delete", new { id = $"{Model.EmployeeID} {Model.TerritoryID}" })
+                </button>
+            </p>
+        </div>
+    </div>
+</body>
+
+

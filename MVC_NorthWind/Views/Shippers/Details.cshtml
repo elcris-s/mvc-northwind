@@ -1,0 +1,37 @@
+﻿@model MVC_NorthWind.Models.Shippers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipperID): </b>@Html.DisplayFor(model => model.ShipperID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CompanyName): </b>@Html.DisplayFor(model => model.CompanyName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Phone): </b>@Html.DisplayFor(model => model.Phone)</p>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Atras", "TodosShippers")</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Editar Compañia Distribuidora", "Edit", new { id = Model.ShipperID })</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Eliminar Compañia Distribuidora", "Delete", new { id = Model.ShipperID })</button>
+            </p>
+        </div>
+    </div>
+</body>

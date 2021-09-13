@@ -1,0 +1,114 @@
+﻿@model MVC_NorthWind.Models.Orders
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <style>
+        .card {
+            margin: 3em;
+            width: auto;
+        }
+    </style>
+</head>
+
+@using (Html.BeginForm("Edit", "Orders", new { id = $"{Model.OrderID}" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <body>
+        <div class="card container">
+            <h2 align="center">Editar Orden</h2>
+            <form>
+                <div class="row section">
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.OrderID, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.OrderID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                        @Html.ValidationMessageFor(model => model.OrderID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.CustomerID, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("CustomerID", null, htmlAttributes: new { @class = "list form-control selectpicker", data_show_subtext = "true", data_live_search = "true" })
+                        @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.EmployeeID, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("EmployeeID", null, htmlAttributes: new { @class = "list form-control selectpicker", data_show_subtext = "true", data_live_search = "true" })
+                        @Html.ValidationMessageFor(model => model.EmployeeID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.RequiredDate, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.RequiredDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.RequiredDate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShippedDate, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShippedDate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipVia, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownList("ShipVia", null, htmlAttributes: new { @class = "list form-control selectpicker", data_show_subtext = "true", data_live_search = "true" })
+                        @Html.ValidationMessageFor(model => model.ShipVia, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.Freight, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Freight, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Freight, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipName, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipAddress, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipAddress, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipAddress, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipCity, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipCity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipCity, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipRegion, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipRegion, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipPostalCode, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipPostalCode, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.LabelFor(model => model.ShipCountry, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.ShipCountry, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ShipCountry, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-12" style="margin-left:30em; margin-top: 2em; margin-bottom: 2em">
+                        <input type="submit" value="Actualizar" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <div class="btn btn-outline-primary">
+        @Html.ActionLink("Atras", "TodasOrdenes")
+    </div>
+}
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

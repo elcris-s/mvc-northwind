@@ -1,0 +1,72 @@
+﻿@model MVC_NorthWind.Models.Suppliers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.SupplierID): </b>@Html.DisplayFor(model => model.SupplierID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CompanyName): </b>@Html.DisplayFor(model => model.CompanyName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ContactName): </b>@Html.DisplayFor(model => model.ContactName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ContactTitle): </b>@Html.DisplayFor(model => model.ContactTitle)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Address): </b>@Html.DisplayFor(model => model.Address)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.City): </b>@Html.DisplayFor(model => model.City)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Region): </b>@Html.DisplayFor(model => model.Region)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Country): </b>@Html.DisplayFor(model => model.Country)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Phone): </b>@Html.DisplayFor(model => model.Phone)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Fax): </b>@Html.DisplayFor(model => model.Fax)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.HomePage): </b>@Html.DisplayFor(model => model.HomePage)</p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <button class="btn btn-light">@Html.ActionLink("Atras", "TodosSuplidores")</button>
+                    <input type="submit" value="Eliminar" class="btn btn-light" />
+                </p>
+            }
+
+            <p class="error">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+</body>

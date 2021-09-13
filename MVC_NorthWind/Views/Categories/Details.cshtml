@@ -1,0 +1,47 @@
+﻿@model MVC_NorthWind.Models.Categories
+
+@{
+    ViewBag.Title = "Categoria";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <img class="rounded mx-auto d-block w-50" src="data:image;base64,@System.Convert.ToBase64String(Model.Picture)" />
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CategoryID): </b>@Html.DisplayFor(model => model.CategoryID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CategoryName): </b>@Html.DisplayFor(model => model.CategoryName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Description): </b>@Html.DisplayFor(model => model.Description)</p>
+                </div>
+            </div>
+            <p>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Atras", "TodasCategorias")
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Editar Categoria", "Edit", new { id = Model.CategoryID })
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm px-3">
+                    @Html.ActionLink("Eliminar Categoria", "Delete", new { id = Model.CategoryID })
+                </button>
+            </p>
+        </div>
+    </div>
+</body>
+
+
+

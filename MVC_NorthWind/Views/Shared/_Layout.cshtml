@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NORTHWIND</title>
+    @Styles.Render("~/Content/css")
+    <link rel="icon" type="image/x-icon" href="~/navbar/assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/navbar/css/styles.css" rel="stylesheet" />
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light"><a class="navbar-brand" href="/">NORTHWIND</a></div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Categories">Categorias</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Customers">Clientes</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Employees">Empleados</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Orders">Ordenes</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Order_Details">Detalles de Ordenes</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Products">Productos</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Regions">Regiones</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Shippers">Compañias Distribuidoras</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Suppliers">Suplidores</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Territories">Territorios</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/CustomerDemographics">CustomerDemographics</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/EmployeeTerritories">EmployeeTerritories</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">MENU</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                </div>
+            </nav>
+            <!-- Page content-->
+            <div class="container body-content" style="gap: 1em;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/navbar/js/scripts.js"></script>
+</body>
+</html>

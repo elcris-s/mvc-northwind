@@ -1,0 +1,48 @@
+﻿@model MVC_NorthWind.Models.Shippers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipperID): </b>@Html.DisplayFor(model => model.ShipperID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CompanyName): </b>@Html.DisplayFor(model => model.CompanyName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Phone): </b>@Html.DisplayFor(model => model.Phone)</p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <button class="btn btn-light">@Html.ActionLink("Atras", "TodosShippers")</button>
+                    <input type="submit" value="Eliminar" class="btn btn-light" />
+                </p>
+            }
+
+            <p class="error">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+</body>

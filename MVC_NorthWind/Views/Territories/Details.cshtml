@@ -1,0 +1,37 @@
+﻿@model MVC_NorthWind.Models.Territories
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.TerritoryID): </b>@Html.DisplayFor(model => model.TerritoryID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.TerritoryDescription): </b>@Html.DisplayFor(model => model.TerritoryDescription)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Region.RegionDescription): </b>@Html.DisplayFor(model => model.Region.RegionDescription)</p>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Atras", "TodosTerritorios")</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Editar Territorio", "Edit", new { id = Model.TerritoryID })</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Eliminar Territorio", "Delete", new { id = Model.TerritoryID })</button>
+            </p>
+        </div>
+    </div>
+</body>

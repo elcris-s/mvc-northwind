@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVC_NorthWind.Models.Categories>
+
+@{
+    ViewBag.Title = "Categorias";
+}
+
+<head>
+    <style>
+        .card {
+            margin-top: 2em;
+            margin-left: 15em;
+        }
+        
+    </style>
+</head>
+
+<div class="card shadow p-3 mb-5" style="width: 50rem;">
+    <div class="card-body" align="center">
+        <img class="rounded mx-auto d-block w-50" src="~/images/gif/categorie.gif" />
+        <h3 class="card-title">Seccion de Categorias</h3>
+        <h4 class="card-text">Elija la opcion que desea realizar</h4>
+        <a href="/Categories/Create" class="btn btn-primary">Añadir Categoria</a>
+        <a href="/Categories/TodasCategorias" class="btn btn-primary">Mostrar Todos Las Categorias</a>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@model MVC_NorthWind.Models.Orders
+
+@{
+    ViewBag.Title = "Delete";
+    var fecha1 = Convert.ToDateTime(Model.OrderDate).ToString("d");
+    var fecha2 = Convert.ToDateTime(Model.RequiredDate).ToString("d");
+    var fecha3 = Convert.ToDateTime(Model.ShippedDate).ToString("d");
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.OrderID): </b>@Html.DisplayFor(model => model.OrderID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.CustomerID): </b>@Html.DisplayFor(model => model.CustomerID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.EmployeeID): </b>@Html.DisplayFor(model => model.EmployeeID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.OrderDate): </b>@fecha1</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.RequiredDate): </b>@fecha2</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShippedDate): </b>@fecha3</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipVia): </b>@Html.DisplayFor(model => model.ShipVia)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.Freight): </b>@Html.DisplayFor(model => model.Freight)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipName): </b>@Html.DisplayFor(model => model.ShipName)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipAddress): </b>@Html.DisplayFor(model => model.ShipAddress)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipCity): </b>@Html.DisplayFor(model => model.ShipCity)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipRegion): </b>@Html.DisplayFor(model => model.ShipRegion)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipPostalCode): </b>@Html.DisplayFor(model => model.ShipPostalCode)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.ShipCountry): </b>@Html.DisplayFor(model => model.ShipCountry)</p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <button class="btn btn-light">@Html.ActionLink("Atras", "TodasOrdenes")</button>
+                    <input type="submit" value="Eliminar" class="btn btn-light" />
+                </p>
+            }
+
+            <p class="error">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+</body>

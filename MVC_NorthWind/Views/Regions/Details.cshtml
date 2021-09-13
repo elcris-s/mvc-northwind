@@ -1,0 +1,34 @@
+﻿@model MVC_NorthWind.Models.Region
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+    </style>
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.RegionID): </b>@Html.DisplayFor(model => model.RegionID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.RegionDescription): </b>@Html.DisplayFor(model => model.RegionDescription)</p>
+                </div>
+            </div>
+            <p>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Atras", "TodasRegiones")</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Editar Region", "Edit", new { id = Model.RegionID })</button>
+                <button class="btn btn-outline-primary">@Html.ActionLink("Eliminar Region", "Delete", new { id = Model.RegionID })</button>
+            </p>
+        </div>
+    </div>
+</body>

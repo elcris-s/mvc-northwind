@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVC_NorthWind.Models.Order_Details>
+
+@{
+    ViewBag.Title = "Detalles de Ordenes";
+}
+
+
+<head>
+    <style>
+        .card {
+            margin-top: 2em;
+            margin-left: 15em;
+        }
+    </style>
+</head>
+
+<div class="card shadow p-3 mb-5" style="width: 50rem;">
+    <div class="card-body" align="center">
+        <img class="rounded mx-auto d-block w-50" src="~/images/gif/orderdetail.gif">
+        <h3 class="card-title">Seccion de Detalles de Ordenes</h3>
+        <h4 class="card-text">Elija la opcion que desea realizar</h4>
+        <a href="/Order_Details/Create" class="btn btn-primary">Añadir Detalle de Orden</a>
+        <a href="/Order_Details/TodosDetalles" class="btn btn-primary">Mostrar Todos Los Detalles de Ordenes</a>
+    </div>
+</div>

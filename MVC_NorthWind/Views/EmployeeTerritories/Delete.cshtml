@@ -1,0 +1,45 @@
+﻿@model MVC_NorthWind.Models.Model2.EmployeeTerritories
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<head>
+    <style>
+        .row {
+            margin-top: 1em;
+            row-gap: 1em;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body class="card container-fluid">
+    <div class="row">
+        <div class="card text-center container-fluid col-sm-5 shadow p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.EmployeeID): </b>@Html.DisplayFor(model => model.EmployeeID)</p>
+                </div>
+                <div class="card-text">
+                    <p><b>@Html.LabelFor(model => model.TerritoryID): </b>@Html.DisplayFor(model => model.TerritoryID)</p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm("Delete", "EmployeeTerritories", new { id = $"{Model.EmployeeID} {Model.TerritoryID}" }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <p>
+                    <button class="btn btn-light">@Html.ActionLink("Atras", "TodosEmpTer")</button>
+                    <input type="submit" value="Eliminar" class="btn btn-light" />
+                </p>
+            }
+
+            <p class="error">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+</body>
